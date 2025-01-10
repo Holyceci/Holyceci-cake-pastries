@@ -5,54 +5,58 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-/* Default Styles for Desktop */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-nav ul {
-    display: flex;
-    justify-content: space-around;
-}
-nav .menu-toggle {
-    display: none; /* Hidden on larger screens */
-}
-
-/* Styles for Mobile Screens */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-    }
-    nav .menu-toggle {
-        display: block;
-    }
-}
 
 /* Header Styles */
 header {
-    background-color: #333;
-    color: rgb(220, 208, 208);
-    padding: 10px 20px;
+    background-color: #c74cbd;
+    color: rgb(77, 107, 143);
+    text-align: center;
+    padding: 20px 0;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
 }
 
 .nav-links {
     list-style-type: none;
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 .nav-links a {
     color: rgb(114, 176, 220);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: rgb(200, 220, 250);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 /* Hero Section */
@@ -60,15 +64,45 @@ nav {
     text-align: center;
     padding: 100px 20px;
     background: #d4a0a0;
+    color: #333;
 }
 
 .cta-button {
     padding: 10px 20px;
     background-color: #007BFF;
-    color: rgb(125, 16, 87);
+    color: white;
     border: none;
     border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Main Section */
+main {
+    padding: 10px;
+}
+
+.product {
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #a22793;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #30058c;
+    transform: scale(1.1);
 }
 
 /* Footer Styles */
@@ -78,13 +112,20 @@ footer {
     background-color: #a7c2c9;
     color: rgb(95, 111, 142);
 }
-.button {
-    padding: 10px 20px;
-    background: #007BFF;
-    color: white;
-    border: none;
-    transition: transform 0.2s ease;
+
+/* Animation Styles */
+.animated-banner {
+    animation: fadeIn 2s ease-in;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
 }
-.button:hover {
-    transform: scale(1.1);
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
